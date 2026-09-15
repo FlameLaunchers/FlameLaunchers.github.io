@@ -60,20 +60,6 @@ if (slides.length) {
   });
 }
 
-/* ── ember particles ─────────────────────── */
-const box = document.querySelector('.embers');
-if (box && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  for (let i = 0; i < 26; i++) {
-    const e = document.createElement('i');
-    const s = 2 + Math.random() * 4;
-    e.style.cssText = `left:${Math.random() * 100}%;width:${s}px;height:${s}px;
-      --x:${(Math.random() - .5) * 160}px;
-      animation-duration:${7 + Math.random() * 9}s;animation-delay:${-Math.random() * 14}s;
-      background:${Math.random() > .5 ? 'var(--ember)' : 'var(--flame)'}`;
-    box.appendChild(e);
-  }
-}
-
 /* ── count-up numbers ────────────────────── */
 document.querySelectorAll('[data-count]').forEach(el => {
   const ob = new IntersectionObserver(es => es.forEach(e => {
