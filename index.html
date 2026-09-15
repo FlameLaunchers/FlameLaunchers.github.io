@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlameLauncher — Minecraft: Java Edition on Android &amp; iOS</title>
+<meta name="description" content="안드로이드와 iOS 에서 마인크래프트 자바 에디션을 실행하는 런처. 에뮬레이터가 아니라 앱 프로세스 안에서 진짜 OpenJDK를 부팅합니다.">
+<meta property="og:title" content="FlameLauncher">
+<meta property="og:description" content="Minecraft: Java Edition on Android and iOS — a real OpenJDK booted inside the app process.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="deck">
+
+<div id="bar"></div>
+
+<nav><div class="wrap">
+  <a class="brand" href="./">🔥 <em>FlameLauncher</em></a>
+  <div class="navlinks">
+    <a href="#plat"    data-ko="플랫폼" data-ja="プラットフォーム" data-en="Platforms"></a>
+    <a href="#how"     data-ko="구조"   data-ja="仕組み" data-en="How"></a>
+    <a href="#render"  data-ko="렌더러" data-ja="レンダラー" data-en="Renderers"></a>
+    <a href="mods.html" data-ko="모드"  data-ja="MOD"   data-en="Mods"></a>
+    <a href="#scope"   data-ko="지원범위" data-ja="対応範囲" data-en="Scope"></a>
+  </div>
+  <div class="langs">
+    <button data-lang="ko" aria-pressed="true">한국어</button>
+    <button data-lang="ja" aria-pressed="false">日本語</button>
+    <button data-lang="en" aria-pressed="false">English</button>
+  </div>
+</div></nav>
+
+<div class="dots"></div>
+
+<!-- 1 ─ hero -->
+<section class="slide hero" id="top">
+  <div class="glow"></div>
+  <div class="embers"></div>
+  <div class="wrap">
+    <div class="logo rv zoom">🔥</div>
+    <h1 class="rv"><span class="grad">FlameLauncher</span></h1>
+    <p class="tag rv"
+       data-ko="안드로이드와 iOS 에서 마인크래프트 자바 에디션을 실행하는 런처. 에뮬레이터가 아니라, 앱 프로세스 안에서 진짜 OpenJDK를 부팅합니다."
+       data-ja="Android と iOS で Minecraft: Java Edition を動かすランチャー。エミュレーターではなく、アプリのプロセス内で本物の OpenJDK を起動します。"
+       data-en="An Android and iOS launcher for Minecraft: Java Edition. Not an emulator — it boots a real OpenJDK inside the app process."></p>
+    <div class="badges rv">
+      <span class="badge">Android 8.0+</span>
+      <span class="badge">iOS 17.0+</span>
+      <span class="badge">arm64</span>
+      <span class="badge">Fabric · Forge · NeoForge · Quilt</span>
+      <span class="badge">~ MC 26.2</span>
+    </div>
+    <div class="cta rv">
+      <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-Android/releases"
+         data-ko="Android — APK" data-ja="Android — APK" data-en="Android — APK"></a>
+      <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-iOS/releases"
+         data-ko="iOS — IPA" data-ja="iOS — IPA" data-en="iOS — IPA"></a>
+      <a class="btn ghost" href="mods.html"
+         data-ko="설치 가능한 모드 보기" data-ja="導入できる MOD を見る" data-en="See which mods work"></a>
+    </div>
+  </div>
+  <div class="hint" data-ko="스크롤 · ↓" data-ja="スクロール · ↓" data-en="Scroll · ↓"></div>
+</section>
+
+<!-- 2 ─ platforms -->
+<section class="slide" id="plat">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="플랫폼" data-ja="プラットフォーム" data-en="Platforms"></span>
+    <h2 class="rv" data-ko="같은 게임, 다른 문턱"
+        data-ja="同じゲーム、違うハードル" data-en="Same game, different hurdle"></h2>
+    <p class="lead rv"
+       data-ko="두 앱은 같은 규칙으로 돕니다 — 같은 폴더 구조, 같은 JVM 인자, 같은 GLFW 매핑. 차이는 OS 가 무엇을 허락하느냐입니다."
+       data-ja="2 つのアプリは同じ規則で動きます — 同じフォルダ構成、同じ JVM 引数、同じ GLFW マッピング。違いは OS が何を許すかです。"
+       data-en="Both apps follow the same rules — same folder layout, same JVM arguments, same GLFW mapping. What differs is what the OS permits."></p>
+    <div class="grid g2">
+      <div class="card rv">
+        <h3>🤖 Android</h3>
+        <ul class="list yes">
+          <li data-ko="APK 받아서 설치하면 끝" data-ja="APK を入れるだけ" data-en="Install the APK and you're done"></li>
+          <li data-ko="JIT 설정이 필요 없습니다" data-ja="JIT の設定は不要です" data-en="No JIT setup needed"></li>
+          <li data-ko="렌더러 4종 + 커스텀 Vulkan 드라이버" data-ja="レンダラー 4 種 + カスタム Vulkan ドライバー" data-en="Four renderers plus custom Vulkan drivers"></li>
+          <li data-ko="마우스 Pointer Capture 지원" data-ja="マウスの Pointer Capture 対応" data-en="Mouse pointer capture"></li>
+          <li data-ko="Android 8.0+ · arm64-v8a" data-ja="Android 8.0+ · arm64-v8a" data-en="Android 8.0+ · arm64-v8a"></li>
+        </ul>
+      </div>
+      <div class="card rv">
+        <h3>🍎 iOS</h3>
+        <ul class="list yes">
+          <li data-ko="사이드로드 후 JIT 를 켜야 합니다" data-ja="サイドロード後に JIT を有効化する必要があります" data-en="Sideload, then enable JIT"></li>
+          <li data-ko="TrollStore 면 한 번에 끝 (iOS 17.0 이하)" data-ja="TrollStore なら一発（iOS 17.0 以下）" data-en="TrollStore does it in one step (iOS ≤ 17.0)"></li>
+          <li data-ko="그 위 버전은 StikDebug — 컴퓨터는 최초 1회만" data-ja="それ以降は StikDebug — PC は初回のみ" data-en="Above that, StikDebug — a computer once only"></li>
+          <li data-ko="MobileGlues 렌더러로 Iris 셰이더 동작" data-ja="MobileGlues レンダラーで Iris シェーダーが動作" data-en="Iris shaders run on the MobileGlues renderer"></li>
+          <li data-ko="iOS 17.0+ · arm64" data-ja="iOS 17.0+ · arm64" data-en="iOS 17.0+ · arm64"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn rv"
+      data-ko="iOS 는 앱이 실행 중에 기계어를 만드는 것을 막습니다. 자바가 바로 그 방식으로 도는 언어라, 디버거를 붙여 그 제한을 풀지 않으면 게임이 부팅 도중 멈춥니다. 그래서 설치 방법이 곧 JIT 가능 여부를 결정합니다 — UDID 를 받지 않는 서명 서비스는 배포 인증서를 쓰기 때문에 어떤 도구로도 JIT 가 켜지지 않습니다."
+      data-ja="iOS はアプリが実行中に機械語を生成することを禁じています。Java はまさにその方式で動くため、デバッガを接続して制限を解除しないとゲームは起動途中で止まります。つまりインストール方法が JIT の可否を決めます — UDID を要求しない署名サービスは配布証明書を使うため、どのツールでも JIT は有効になりません。"
+      data-en="iOS forbids apps from generating machine code at runtime, and Java runs exactly that way — without a debugger attached to lift the restriction, the game stalls partway through boot. So how you install decides whether JIT can ever work: signing services that don't ask for your UDID use a distribution certificate, and no tool will enable JIT on one."></div>
+  </div>
+</section>
+
+<!-- 3 ─ how it works -->
+<!-- 2 ─ how -->
+<section class="slide" id="how">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="구조" data-ja="仕組み" data-en="Architecture"></span>
+    <h2 class="rv" data-ko="세 개의 중계 계층" data-ja="3 つのブリッジ層" data-en="Three bridging layers"></h2>
+    <p class="lead rv"
+       data-ko="데스크톱용 자바 게임과 모바일 하드웨어 사이를 잇는 것, 그게 전부입니다."
+       data-ja="デスクトップ向け Java ゲームとモバイルハードウェアを繋ぐ。それが全てです。"
+       data-en="Bridging a desktop Java game to mobile hardware. That's the whole trick."></p>
+    <div class="grid">
+      <div class="card rv"><span class="num">01</span><span class="ico">☕</span>
+        <h3 data-ko="JVM 부팅" data-ja="JVM 起動" data-en="JVM boot"></h3>
+        <p data-ko="JNI_CreateJavaVM 으로 번들 JRE를 띄우고 게임의 main() 을 그대로 호출합니다. 버전에 맞춰 Java 8 / 17 / 21 / 25 를 자동으로 고릅니다."
+           data-ja="JNI_CreateJavaVM でバンドル JRE を起動し、ゲームの main() をそのまま呼び出します。バージョンに応じて Java 8 / 17 / 21 / 25 を自動選択します。"
+           data-en="Starts the bundled JRE with JNI_CreateJavaVM and calls the game's main() directly, picking Java 8 / 17 / 21 / 25 to match the version."></p></div>
+      <div class="card rv"><span class="num">02</span><span class="ico">🎨</span>
+        <h3 data-ko="그래픽 중계" data-ja="グラフィックス変換" data-en="Graphics bridge"></h3>
+        <p data-ko="데스크톱 OpenGL 호출을 Zink · GL4ES · Krypton · MobileGlues 로 번역해 모바일 GPU에 전달합니다. 실패하면 자동으로 다음 경로로 폴백합니다."
+           data-ja="デスクトップ OpenGL の呼び出しを Zink・GL4ES・Krypton・MobileGlues で翻訳し、モバイル GPU へ渡します。失敗すれば自動で次の経路へフォールバックします。"
+           data-en="Translates desktop OpenGL through Zink, GL4ES, Krypton or MobileGlues onto the mobile GPU — falling back automatically when a path fails."></p></div>
+      <div class="card rv"><span class="num">03</span><span class="ico">🕹️</span>
+        <h3 data-ko="입출력 중계" data-ja="入出力変換" data-en="I/O bridge"></h3>
+        <p data-ko="GLFW 윈도잉·입력 API를 안드로이드 Surface, 터치, 키 이벤트에 연결합니다. 키보드·마우스·게임패드도 같은 경로를 씁니다."
+           data-ja="GLFW のウィンドウ・入力 API を Android の Surface・タッチ・キーイベントへ接続します。キーボード・マウス・ゲームパッドも同じ経路です。"
+           data-en="Wires the GLFW windowing and input API to Android Surface, touch and key events — keyboard, mouse and gamepad ride the same path."></p></div>
+    </div>
+    <div class="warn rv"
+      data-ko="PojavLauncher 의 검증된 네이티브 브릿지를 재사용하고, ZalithLauncher 2 의 실행 흐름 처리 일부를 차용했습니다. 그 위에 Compose UI · 콘텐츠 통합 · 크래시 복구를 얹었습니다."
+      data-ja="PojavLauncher の実績あるネイティブブリッジを再利用し、ZalithLauncher 2 の起動処理の一部を取り入れています。その上に Compose UI・コンテンツ連携・クラッシュ復旧を載せました。"
+      data-en="Reuses PojavLauncher's proven native bridges and adapts parts of ZalithLauncher 2's launch orchestration, then adds a Compose UI, content integration and crash recovery."></div>
+  </div>
+</section>
+
+<!-- 3 ─ stats -->
+<section class="slide" id="stats">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="숫자로" data-ja="数字で" data-en="By the numbers"></span>
+    <h2 class="rv" data-ko="폰 하나에 들어간 것들" data-ja="スマホ 1 台に入っているもの" data-en="What fits on one phone"></h2>
+    <p class="lead rv"
+       data-ko="번들 JRE 4개, 렌더러 4종, 로더 4종. 설치는 전부 앱 안에서 끝납니다."
+       data-ja="バンドル JRE 4 種、レンダラー 4 種、ローダー 4 種。導入は全てアプリ内で完結します。"
+       data-en="Four bundled JREs, four renderers, four loaders — every install happens inside the app."></p>
+    <div class="stats">
+      <div class="stat rv"><b data-count="4">4</b>
+        <span data-ko="번들 JRE (8·17·21·25)" data-ja="バンドル JRE (8・17・21・25)" data-en="bundled JREs (8·17·21·25)"></span></div>
+      <div class="stat rv"><b data-count="4">4</b>
+        <span data-ko="렌더러 백엔드" data-ja="レンダラーバックエンド" data-en="renderer backends"></span></div>
+      <div class="stat rv"><b data-count="4">4</b>
+        <span data-ko="모드 로더" data-ja="MOD ローダー" data-en="mod loaders"></span></div>
+      <div class="stat rv"><b data-count="2">2</b>
+        <span data-ko="콘텐츠 저장소 (CurseForge · Modrinth)" data-ja="コンテンツリポジトリ (CurseForge・Modrinth)" data-en="content repositories (CurseForge · Modrinth)"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 ─ renderers -->
+<section class="slide" id="render">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="그래픽" data-ja="グラフィックス" data-en="Graphics"></span>
+    <h2 class="rv" data-ko="렌더러 네 갈래" data-ja="4 つのレンダラー" data-en="Four renderers"></h2>
+    <p class="lead rv"
+       data-ko="안드로이드에서 Zink 가 실패하면 네이티브에서 Freedreno → Panfrost → GL4ES 순으로 자동 폴백합니다. iOS 는 MobileGlues 가 기본이며, 셰이더가 되는 유일한 선택입니다."
+       data-ja="Android では Zink が失敗するとネイティブ側で Freedreno → Panfrost → GL4ES の順に自動フォールバックします。iOS は MobileGlues が既定で、シェーダーが動く唯一の選択肢です。"
+       data-en="On Android, a failing Zink path falls back natively: Freedreno → Panfrost → GL4ES. On iOS, MobileGlues is the default — and the only one shaders run on."></p>
+    <div class="scroll rv"><table class="tbl">
+      <thead><tr>
+        <th data-ko="렌더러" data-ja="レンダラー" data-en="Renderer"></th>
+        <th data-ko="방식" data-ja="方式" data-en="How"></th>
+        <th data-ko="권장 대상" data-ja="推奨環境" data-en="Best for"></th>
+        <th data-ko="플랫폼" data-ja="対応" data-en="Platform"></th>
+      </tr></thead>
+      <tbody>
+        <tr><td><b>Zink</b> 🌋</td><td>Vulkan → OpenGL</td>
+          <td data-ko="모던 GPU, 1.17 이상" data-ja="モダン GPU、1.17 以降" data-en="Modern GPUs, 1.17+"></td><td>Android</td></tr>
+        <tr><td><b>GL4ES</b> 🕹️</td><td>OpenGL → GLES 2.0</td>
+          <td data-ko="구버전(1.12 이하), Zink 미지원 기기" data-ja="旧バージョン（1.12 以下）、Zink 非対応端末" data-en="Older versions (≤1.12), devices without Zink"></td><td>Android · iOS</td></tr>
+        <tr><td><b>Krypton</b> ⚛️</td><td>OpenGL → GLES 3.x</td>
+          <td data-ko="셰이더 + 폭넓은 버전, 내장" data-ja="シェーダー + 幅広いバージョン、内蔵" data-en="Shaders plus broad coverage; bundled"></td><td>Android</td></tr>
+        <tr><td><b>MobileGlues</b> 🚀</td><td>OpenGL 4.x → GLES 3.2</td>
+          <td data-ko="셰이더 성능 최상. 안드로이드는 별도 APK, iOS 는 내장" data-ja="シェーダー性能が最良。Android は別途 APK、iOS は内蔵" data-en="Best shader performance; a separate APK on Android, built in on iOS"></td><td>Android · <b>iOS 기본</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn rv"
+      data-ko="커스텀 Vulkan 드라이버(Turnip 등)는 이 프로젝트가 배포하지 않습니다. Mesa 공식이나 K11MCH1/AdrenoToolsDrivers 같은 신뢰할 수 있는 출처에서 직접 받아 zip 으로 가져와 주세요."
+      data-ja="カスタム Vulkan ドライバー（Turnip など）は本プロジェクトでは配布していません。Mesa 公式や K11MCH1/AdrenoToolsDrivers など信頼できる入手元から自分で取得し、zip で読み込んでください。"
+      data-en="Custom Vulkan drivers (Turnip and friends) are not distributed by this project. Get them from a trusted source — official Mesa, K11MCH1/AdrenoToolsDrivers — and import the zip yourself."></div>
+  </div>
+</section>
+
+<!-- 5 ─ mods teaser -->
+<section class="slide" id="mods">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="모드" data-ja="MOD" data-en="Mods"></span>
+    <h2 class="rv" data-ko="실제로 돌아가는 모드들" data-ja="実際に動く MOD" data-en="Mods that actually run"></h2>
+    <p class="lead rv"
+       data-ko="CurseForge 와 Modrinth 를 앱 안에서 검색해 바로 설치합니다. 데스크톱 전용 네이티브를 물고 있는 모드는 설치 전에 걸러냅니다."
+       data-ja="CurseForge と Modrinth をアプリ内で検索してそのまま導入。デスクトップ専用ネイティブを含む MOD は導入前に弾きます。"
+       data-en="Search CurseForge and Modrinth in-app and install straight away. Mods carrying desktop-only natives are filtered out before they can break anything."></p>
+
+    <div class="marquee rv"><div class="track" id="mq1"></div></div>
+    <div class="marquee rev rv"><div class="track" id="mq2"></div></div>
+
+    <div class="cta" style="justify-content:flex-start">
+      <a class="btn primary rv" href="mods.html"
+         data-ko="모드 목록 전체 보기 →" data-ja="MOD 一覧を見る →" data-en="Browse the full list →"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6 ─ flow -->
+<section class="slide" id="flow">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="내부 동작" data-ja="内部動作" data-en="Under the hood"></span>
+    <h2 class="rv" data-ko="게임 하나 켜는 데 아홉 단계" data-ja="ゲーム 1 つ起動するのに 9 段階" data-en="Nine steps to start one game"></h2>
+    <ol class="flow">
+      <li class="rv left" data-ko="버전 선택 — Mojang version_manifest.json 조회"
+          data-ja="バージョン選択 — Mojang version_manifest.json を取得"
+          data-en="Pick a version — fetch Mojang's version_manifest.json"></li>
+      <li class="rv left" data-ko="로더 선택 — Fabric / Forge / NeoForge 메타 API 조회"
+          data-ja="ローダー選択 — Fabric / Forge / NeoForge のメタ API を取得"
+          data-en="Pick a loader — query the Fabric / Forge / NeoForge meta APIs"></li>
+      <li class="rv left" data-ko="다운로드 — client jar + 라이브러리 + 에셋"
+          data-ja="ダウンロード — client jar + ライブラリ + アセット"
+          data-en="Download — client jar, libraries and assets"></li>
+      <li class="rv left" data-ko="로더 설치 — 라이브러리 병합 후 InstanceMeta 로 평탄화"
+          data-ja="ローダー導入 — ライブラリを統合し InstanceMeta へ平坦化"
+          data-en="Install the loader — merge libraries, flatten into InstanceMeta"></li>
+      <li class="rv left" data-ko="JRE 추출 — MC 버전에 맞는 Java 8 / 17 / 21 / 25"
+          data-ja="JRE 展開 — MC のバージョンに合わせた Java 8 / 17 / 21 / 25"
+          data-en="Extract the JRE — Java 8 / 17 / 21 / 25 to match the MC version"></li>
+      <li class="rv left" data-ko="(Forge 첫 실행) 별도 프로세스에서 client jar 패치 후 종료"
+          data-ja="（Forge 初回）別プロセスで client jar をパッチして終了"
+          data-en="(First Forge run) a separate process patches the client jar, then exits"></li>
+      <li class="rv left" data-ko="렌더러 로드 — 선택된 .so 로드 + 환경변수 구성"
+          data-ja="レンダラー読込 — 選択された .so をロード + 環境変数を構成"
+          data-en="Load the renderer — load the selected .so and set environment variables"></li>
+      <li class="rv left" data-ko="JVM 부팅 — flamejvm.cpp::bootMinecraftJVM → JNI_CreateJavaVM"
+          data-ja="JVM 起動 — flamejvm.cpp::bootMinecraftJVM → JNI_CreateJavaVM"
+          data-en="Boot the JVM — flamejvm.cpp::bootMinecraftJVM → JNI_CreateJavaVM"></li>
+      <li class="rv left" data-ko="게임 시작 — mainClass.main(args)"
+          data-ja="ゲーム開始 — mainClass.main(args)"
+          data-en="Start the game — mainClass.main(args)"></li>
+    </ol>
+    <div class="warn rv"
+      data-ko="6번이 별도 프로세스인 이유: JNI_CreateJavaVM 은 프로세스당 한 번만 가능합니다. 게임 JVM 안에서 Forge 프로세서를 돌리면 패치된 jar 가 완성되기 전에 클래스패스가 굳어버립니다."
+      data-ja="6 が別プロセスな理由: JNI_CreateJavaVM はプロセスにつき 1 回しか呼べません。ゲーム JVM 内で Forge プロセッサーを走らせると、パッチ済み jar が完成する前にクラスパスが確定してしまいます。"
+      data-en="Why step 6 is its own process: JNI_CreateJavaVM can only be called once per process. Running Forge processors inside the game JVM freezes the classpath before the patched jar exists."></div>
+  </div>
+</section>
+
+<!-- 7 ─ input -->
+<section class="slide" id="input">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="입력" data-ja="入力" data-en="Input"></span>
+    <h2 class="rv" data-ko="손가락도, 하드웨어도" data-ja="指でも、ハードでも" data-en="Fingers or hardware"></h2>
+    <p class="lead rv"
+       data-ko="마인크래프트 자바판은 컨트롤러를 네이티브 지원하지 않습니다. 그래서 런처가 직접 키보드·마우스 이벤트로 변환합니다."
+       data-ja="Minecraft Java 版はコントローラーをネイティブ対応していません。そこでランチャーが直接キーボード・マウスイベントへ変換します。"
+       data-en="Minecraft: Java Edition has no native controller support, so the launcher translates into keyboard and mouse events itself."></p>
+    <div class="grid g2">
+      <div class="card rv"><span class="ico">👆</span>
+        <h3 data-ko="터치" data-ja="タッチ" data-en="Touch"></h3>
+        <p data-ko="드래그 앤 드롭으로 편집하는 가상 키패드. 폰·태블릿에 맞춰 자동 스케일. 전투/일반 모드 토글로 탭과 롱프레스에 공격·사용을 바꿔 배정합니다."
+           data-ja="ドラッグ&ドロップで編集できる仮想キーパッド。スマホ・タブレットに合わせて自動スケール。戦闘/通常モードの切替でタップと長押しに攻撃・使用を割り当て直します。"
+           data-en="A drag-and-drop editable virtual keypad that scales for phones and tablets, with a combat/normal toggle that reassigns attack and use between tap and long-press."></p></div>
+      <div class="card rv"><span class="ico">⌨️</span>
+        <h3 data-ko="키보드 · 마우스" data-ja="キーボード・マウス" data-en="Keyboard & mouse"></h3>
+        <p data-ko="GLFW 전체 키 매핑, 좌우 수식키 구분, IME 조합 지원. 마우스는 Pointer Capture 로 화면 경계와 무관한 무한 시점 회전, 메뉴에서는 절대좌표 커서로 자동 전환."
+           data-ja="GLFW の全キーマッピング、左右修飾キーの区別、IME 入力に対応。マウスは Pointer Capture により画面端に制限されない無限の視点回転、メニューでは絶対座標カーソルへ自動切替。"
+           data-en="Full GLFW key mapping with distinct left/right modifiers and IME composition. Pointer Capture gives unbounded look-around; menus switch to an absolute cursor automatically."></p></div>
+    </div>
+    <div class="scroll rv" style="margin-top:16px"><table class="tbl">
+      <thead><tr>
+        <th data-ko="게임패드" data-ja="ゲームパッド" data-en="Gamepad"></th>
+        <th data-ko="동작" data-ja="動作" data-en="Action"></th>
+        <th data-ko="게임패드" data-ja="ゲームパッド" data-en="Gamepad"></th>
+        <th data-ko="동작" data-ja="動作" data-en="Action"></th>
+      </tr></thead>
+      <tbody>
+        <tr><td>L-Stick</td><td>WASD</td><td>R-Stick</td>
+          <td data-ko="시점 (아날로그)" data-ja="視点（アナログ）" data-en="Look (analog)"></td></tr>
+        <tr><td>RT</td><td data-ko="공격 (좌클릭)" data-ja="攻撃（左クリック）" data-en="Attack (left click)"></td>
+            <td>LT</td><td data-ko="사용 (우클릭)" data-ja="使用（右クリック）" data-en="Use (right click)"></td></tr>
+        <tr><td>A</td><td data-ko="점프" data-ja="ジャンプ" data-en="Jump"></td>
+            <td>B</td><td data-ko="웅크리기" data-ja="スニーク" data-en="Sneak"></td></tr>
+        <tr><td>X</td><td data-ko="버리기" data-ja="アイテムを捨てる" data-en="Drop"></td>
+            <td>Y</td><td data-ko="인벤토리" data-ja="インベントリ" data-en="Inventory"></td></tr>
+        <tr><td>LB / RB</td><td data-ko="핫바 이전 / 다음" data-ja="ホットバー 前 / 次" data-en="Hotbar prev / next"></td>
+            <td>L3 / R3</td><td data-ko="달리기 / 휠클릭" data-ja="ダッシュ / ホイールクリック" data-en="Sprint / middle click"></td></tr>
+        <tr><td>Start</td><td>ESC</td><td>Select</td><td>Tab</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- 8 ─ scope -->
+<section class="slide" id="scope">
+  <div class="wrap">
+    <span class="kicker rv" data-ko="지원 범위" data-ja="対応範囲" data-en="Scope"></span>
+    <h2 class="rv" data-ko="되는 것과 안 되는 것" data-ja="できることと、できないこと" data-en="What works, what doesn't"></h2>
+    <p class="lead rv"
+       data-ko="정직하게 적어둡니다. 안 되는 것도 그대로."
+       data-ja="正直に書いておきます。できないことも、そのまま。"
+       data-en="Stated honestly — including what does not work."></p>
+    <div class="grid g2">
+      <div class="card rv">
+        <h3 data-ko="✅ 됩니다" data-ja="✅ できること" data-en="✅ Works"></h3>
+        <ul class="list yes">
+          <li data-ko="Vanilla · Fabric · Forge · NeoForge (모드팩 경로로 Quilt)"
+              data-ja="Vanilla・Fabric・Forge・NeoForge（モドパック経由で Quilt）"
+              data-en="Vanilla, Fabric, Forge, NeoForge (Quilt via modpacks)"></li>
+          <li data-ko="Microsoft 로그인 전체 흐름"
+              data-ja="Microsoft ログインの全フロー"
+              data-en="The full Microsoft sign-in flow"></li>
+          <li data-ko="Java 8 / 17 / 21 / 25 자동 선택 및 추출"
+              data-ja="Java 8 / 17 / 21 / 25 の自動選択と展開"
+              data-en="Java 8 / 17 / 21 / 25, selected and extracted automatically"></li>
+          <li data-ko="셰이더팩 · 커스텀 Vulkan 드라이버 임포트"
+              data-ja="シェーダーパック・カスタム Vulkan ドライバーの読込"
+              data-en="Shader packs and custom Vulkan driver import"></li>
+          <li data-ko="Simple Voice Chat 계열 음성채팅 (마이크 브릿지)"
+              data-ja="Simple Voice Chat 系のボイスチャット（マイクブリッジ）"
+              data-en="Simple Voice Chat and friends, via the microphone bridge"></li>
+          <li data-ko="Terracotta P2P 멀티플레이 — 중계 서버 없이 직접 연결"
+              data-ja="Terracotta P2P マルチプレイ — 中継サーバーなしで直接接続"
+              data-en="Terracotta P2P multiplayer — direct, with no relay server"></li>
+          <li data-ko="최신 정식 릴리스 26.2"
+              data-ja="最新の正式リリース 26.2"
+              data-en="The latest stable release, 26.2"></li>
+        </ul>
+      </div>
+      <div class="card rv">
+        <h3 data-ko="⛔ 안 됩니다" data-ja="⛔ できないこと" data-en="⛔ Does not work"></h3>
+        <ul class="list no">
+          <li data-ko="MC 26.3 스냅샷 — 게임이 GLFW 에서 SDL3 로 갈아탔습니다. 런처의 GLFW 가로채기 계층이 통째로 무의미해집니다."
+              data-ja="MC 26.3 スナップショット — ゲームが GLFW から SDL3 へ移行。ランチャーの GLFW 横取り層が丸ごと無意味になります。"
+              data-en="MC 26.3 snapshots — the game moved from GLFW to SDL3, which makes the launcher's whole GLFW interception layer meaningless."></li>
+          <li data-ko="Vulkan 네이티브 백엔드 — VkSurfaceKHR 생성 경로가 없습니다. OpenGL 백엔드로 실행하세요."
+              data-ja="Vulkan ネイティブバックエンド — VkSurfaceKHR の生成経路がありません。OpenGL バックエンドで起動してください。"
+              data-en="The native Vulkan backend — there is no VkSurfaceKHR creation path. Run with OpenGL."></li>
+          <li data-ko="데스크톱 전용 네이티브를 번들하는 모드 — 자동 비활성화 (삭제 대신 이름만 바꿔 모드팩 무결성 보존)"
+              data-ja="デスクトップ専用ネイティブを含む MOD — 自動で無効化（削除ではなくリネームでモドパックの整合性を保持）"
+              data-en="Mods bundling desktop-only natives — auto-disabled by renaming, not deleting, so modpack integrity survives"></li>
+          <li data-ko="32비트 기기 — arm64 전용입니다"
+              data-ja="32bit 端末 — arm64 専用です"
+              data-en="32-bit devices — arm64 only"></li>
+          <li data-ko="iOS: 버전을 바꿀 때마다 JIT 재연결 — JVM 은 프로세스당 한 번만 뜨고, JIT 는 프로세스 속성입니다. 우회 방법이 없습니다."
+              data-ja="iOS: バージョンを変えるたびに JIT の再接続 — JVM はプロセスにつき 1 回、JIT はプロセスの属性です。回避方法はありません。"
+              data-en="iOS: re-attaching JIT on every version switch — a JVM starts once per process, and JIT is a property of the process. There is no way around it."></li>
+          <li data-ko="iOS 온라인 LAN 참가 — 가상 네트워크 장치(TUN)를 만들 권한이 무료 계정으로 서명되지 않습니다. 주소를 직접 입력해야 합니다. 방 열기는 정상 동작합니다."
+              data-ja="iOS のオンライン LAN 参加 — 仮想ネットワークデバイス（TUN）の権限が無料アカウントでは署名できません。アドレスの手入力が必要です。ホスト側は正常に動作します。"
+              data-en="Joining an Online LAN room on iOS — the entitlement for a virtual network device cannot be signed with a free account, so the address goes in by hand. Hosting works normally."></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 ─ cta -->
+<section class="slide" id="get" style="text-align:center">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="logo rv zoom">🔥</div>
+    <h2 class="rv" style="margin-top:18px"
+        data-ko="지금 받아보세요" data-ja="今すぐ試す" data-en="Get it now"></h2>
+    <p class="lead rv" style="margin:14px auto 30px"
+       data-ko="Android 8.0 이상 · iOS 17.0 이상 · arm64 기기에서 동작합니다."
+       data-ja="Android 8.0 以上・iOS 17.0 以上・arm64 端末で動作します。"
+       data-en="Runs on Android 8.0+ and iOS 17.0+, arm64 devices."></p>
+    <div class="cta rv">
+      <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-Android/releases"
+         data-ko="Android — APK 다운로드" data-ja="Android — APK をダウンロード" data-en="Android — download the APK"></a>
+      <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-iOS/releases"
+         data-ko="iOS — IPA 다운로드" data-ja="iOS — IPA をダウンロード" data-en="iOS — download the IPA"></a>
+    </div>
+    <div class="cta rv" style="margin-top:12px">
+      <a class="btn ghost" href="https://github.com/FlameLaunchers/FlameLauncher-Android"
+         data-ko="Android 저장소" data-ja="Android リポジトリ" data-en="Android repo"></a>
+      <a class="btn ghost" href="https://github.com/FlameLaunchers/FlameLauncher-iOS"
+         data-ko="iOS 저장소" data-ja="iOS リポジトリ" data-en="iOS repo"></a>
+      <a class="btn ghost" href="https://github.com/FlameLaunchers/FlameLauncher-Natives"
+         data-ko="네이티브 빌드" data-ja="ネイティブビルド" data-en="Natives"></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div data-ko="AGPL-3.0 · Terracotta AGPL-3.0 · PojavLauncher · Amethyst-iOS GPL-3.0 · MobileGlues LGPL-2.1 · libadrenotools BSD-2-Clause"
+       data-ja="AGPL-3.0 · Terracotta AGPL-3.0 · PojavLauncher · Amethyst-iOS GPL-3.0 · MobileGlues LGPL-2.1 · libadrenotools BSD-2-Clause"
+       data-en="AGPL-3.0 · Terracotta AGPL-3.0 · PojavLauncher and Amethyst-iOS GPL-3.0 · MobileGlues LGPL-2.1 · libadrenotools BSD-2-Clause"></div>
+  <div data-ko="Minecraft 는 Mojang AB 의 상표입니다. 이 프로젝트는 Mojang AB · Microsoft 와 아무 관련이 없습니다."
+       data-ja="Minecraft は Mojang AB の商標です。本プロジェクトは Mojang AB・Microsoft とは一切関係ありません。"
+       data-en="Minecraft is a trademark of Mojang AB. This project is not affiliated with Mojang AB or Microsoft."></div>
+  <div><a href="https://github.com/FlameLaunchers/FlameLauncher-Android">Android</a> · <a href="https://github.com/FlameLaunchers/FlameLauncher-iOS">iOS</a> · <a href="https://github.com/FlameLaunchers/FlameLauncher-Natives">Natives</a> · <a href="mods.html">Mods</a></div>
+</div></footer>
+
+<script src="app.js"></script>
+<script>
+/* mod icon marquee — built from the same list as mods.html */
+const MQ = [
+  ['sodium','Sodium','webp'],['iris','Iris Shaders','webp'],['lithium','Lithium','webp'],
+  ['fabric-api','Fabric API','png'],['ferrite-core','FerriteCore','webp'],['modernfix','ModernFix','webp'],
+  ['krypton','Krypton','webp'],['entityculling','Entity Culling','webp'],['immediatelyfast','ImmediatelyFast','webp'],
+  ['sodium-extra','Sodium Extra','webp'],['modmenu','Mod Menu','png'],['indium','Indium','webp'],
+  ['jei','JEI','webp'],['rei','REI','webp'],['emi','EMI','webp'],['appleskin','AppleSkin','png'],
+  ['xaeros-minimap',"Xaero's Minimap",'webp'],['journeymap','JourneyMap','webp'],
+  ['simple-voice-chat','Simple Voice Chat','png'],['continuity','Continuity','png'],
+  ['no-chat-reports','No Chat Reports','png'],['cull-less-leaves','Cull Less Leaves','png'],
+  ['complementary-reimagined','Complementary Reimagined','webp'],['bsl-shaders','BSL Shaders','webp'],
+  ['solas-shader','Solas Shader','webp'],['distanthorizons','Distant Horizons','webp']
+];
+const chip = ([s, n, e]) =>
+  `<a class="chip" href="mods.html#${s}"><img src="img/mods/${s}.${e}" alt="" loading="lazy" width="34" height="34">${n}</a>`;
+const half = Math.ceil(MQ.length / 2);
+mq1.innerHTML = [...MQ.slice(0, half), ...MQ.slice(0, half)].map(chip).join('');
+mq2.innerHTML = [...MQ.slice(half), ...MQ.slice(half)].map(chip).join('');
+</script>
+</body>
+</html>
