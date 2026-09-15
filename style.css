@@ -89,7 +89,12 @@ h3{margin:0 0 6px;font-size:16px;font-weight:700}
  *    그라데이션이 흐르는 제목, 까딱이는 "스크롤 ↓". 전부 내용과 무관하고
  *    어느 랜딩 페이지에나 붙어 있는 장식이라 제품이 뭔지 가렸다. */
 .hero{padding:132px 0 96px;text-align:left}
-.hero .logo{width:64px;height:64px}
+.logo{width:64px;height:64px}
+/* ⚠️ 가운데 정렬 섹션에서 `text-align:center` 는 **블록 요소를 가운데로 옮기지 않는다**.
+   전역 `img{display:block}` 때문에 로고가, `.cta{display:flex}` 때문에 버튼들이
+   섹션은 가운데인데 저 혼자 왼쪽에 붙어 있었다. 둘 다 따로 가운데로 보낸다. */
+#get .logo{margin-inline:auto}
+#get .cta{justify-content:center}
 .hero h1{max-width:12ch}
 .tag{font-size:17px;color:var(--dim);margin:18px 0 0;max-width:620px}
 .badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
