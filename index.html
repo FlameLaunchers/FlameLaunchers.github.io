@@ -47,7 +47,7 @@
       <span class="badge">iOS 17.0+</span>
       <span class="badge">arm64</span>
       <span class="badge">Fabric · Forge · NeoForge · Quilt</span>
-      <span class="badge">~ MC 26.2</span>
+      <span class="badge">iOS ~ MC 26.3 · Android ~ 26.2</span>
     </div>
     <div class="cta rv">
       <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-Android/releases/latest/download/FlameLauncher.apk"
@@ -88,6 +88,7 @@
           <li data-ko="TrollStore 면 한 번에 끝 (iOS 17.0 이하)" data-ja="TrollStore なら一発（iOS 17.0 以下）" data-en="TrollStore does it in one step (iOS ≤ 17.0)"></li>
           <li data-ko="그 위 버전은 StikDebug — 컴퓨터는 최초 1회만" data-ja="それ以降は StikDebug — PC は初回のみ" data-en="Above that, StikDebug — a computer once only"></li>
           <li data-ko="MobileGlues 렌더러로 Iris 셰이더 동작" data-ja="MobileGlues レンダラーで Iris シェーダーが動作" data-en="Iris shaders run on the MobileGlues renderer"></li>
+          <li data-ko="MC 26.3 — SDL3 창·입력, Vulkan(MoltenVK) 렌더링" data-ja="MC 26.3 — SDL3 のウィンドウ・入力、Vulkan（MoltenVK）で描画" data-en="MC 26.3 — SDL3 windowing and input, rendered with Vulkan (MoltenVK)"></li>
           <li data-ko="iOS 17.0+ · arm64" data-ja="iOS 17.0+ · arm64" data-en="iOS 17.0+ · arm64"></li>
         </ul>
       </div>
@@ -326,20 +327,20 @@
           <li data-ko="Terracotta P2P 멀티플레이 — 중계 서버 없이 직접 연결"
               data-ja="Terracotta P2P マルチプレイ — 中継サーバーなしで直接接続"
               data-en="Terracotta P2P multiplayer — direct, with no relay server"></li>
-          <li data-ko="최신 정식 릴리스 26.2"
-              data-ja="最新の正式リリース 26.2"
-              data-en="The latest stable release, 26.2"></li>
+          <li data-ko="최신 정식 릴리스 26.3 (iOS) · 안드로이드는 26.2 까지"
+              data-ja="最新の正式リリース 26.3（iOS）・Android は 26.2 まで"
+              data-en="The latest stable release, 26.3 (iOS) — Android up to 26.2"></li>
         </ul>
       </div>
       <div class="card rv">
         <h3 data-ko="⛔ 안 됩니다" data-ja="⛔ できないこと" data-en="⛔ Does not work"></h3>
         <ul class="list no">
-          <li data-ko="MC 26.3 스냅샷 — 게임이 GLFW 에서 SDL3 로 갈아탔습니다. 런처의 GLFW 가로채기 계층이 통째로 무의미해집니다."
-              data-ja="MC 26.3 スナップショット — ゲームが GLFW から SDL3 へ移行。ランチャーの GLFW 横取り層が丸ごと無意味になります。"
-              data-en="MC 26.3 snapshots — the game moved from GLFW to SDL3, which makes the launcher's whole GLFW interception layer meaningless."></li>
-          <li data-ko="Vulkan 네이티브 백엔드 — VkSurfaceKHR 생성 경로가 없습니다. OpenGL 백엔드로 실행하세요."
-              data-ja="Vulkan ネイティブバックエンド — VkSurfaceKHR の生成経路がありません。OpenGL バックエンドで起動してください。"
-              data-en="The native Vulkan backend — there is no VkSurfaceKHR creation path. Run with OpenGL."></li>
+          <li data-ko="안드로이드의 MC 26.3 — 게임이 GLFW 에서 SDL3 로 갈아탔습니다. iOS 는 붙였고, 안드로이드는 작업 중입니다."
+              data-ja="Android での MC 26.3 — ゲームが GLFW から SDL3 へ移行しました。iOS は対応済み、Android は作業中です。"
+              data-en="MC 26.3 on Android — the game moved from GLFW to SDL3. iOS is done; Android is in progress."></li>
+          <li data-ko="안드로이드: 게임의 Vulkan 백엔드 — VkSurfaceKHR 생성 경로가 없습니다. OpenGL 백엔드로 실행하세요."
+              data-ja="Android: ゲームの Vulkan バックエンド — VkSurfaceKHR の生成経路がありません。OpenGL バックエンドで起動してください。"
+              data-en="Android: the game's Vulkan backend — there is no VkSurfaceKHR creation path. Run with OpenGL."></li>
           <li data-ko="데스크톱 전용 네이티브를 번들하는 모드 — 자동 비활성화 (삭제 대신 이름만 바꿔 모드팩 무결성 보존)"
               data-ja="デスクトップ専用ネイティブを含む MOD — 自動で無効化（削除ではなくリネームでモドパックの整合性を保持）"
               data-en="Mods bundling desktop-only natives — auto-disabled by renaming, not deleting, so modpack integrity survives"></li>
