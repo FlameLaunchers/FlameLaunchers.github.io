@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>설치 가능한 모드 — FlameLauncher</title>
-<meta name="description" content="FlameLauncher 에서 실제로 동작하는 모드와 셰이더팩, 그리고 원리적으로 실행되지 않는 모드 목록.">
+<title>Supported mods — FlameLauncher</title>
+<meta name="description" content="Mods and shader packs that actually work in FlameLauncher, and the ones that cannot run by design.">
 <meta property="og:title" content="FlameLauncher — Mods that work">
 <meta property="og:description" content="Which Minecraft mods actually run on Android and iOS through FlameLauncher, and which cannot.">
 <link rel="icon" href="img/logo-32.png">
@@ -17,43 +17,35 @@
 <nav><div class="wrap">
   <a class="brand" href="./"><img src="img/logo-32.png" alt="" width="22" height="22">FlameLauncher</a>
   <div class="navlinks">
-    <a href="./#how"    data-ko="구조"   data-ja="仕組み" data-en="How"></a>
-    <a href="./#render" data-ko="렌더러" data-ja="レンダラー" data-en="Renderers"></a>
-    <a href="mods.html" aria-current="page" data-ko="모드" data-ja="MOD" data-en="Mods"></a>
-    <a href="./#scope"  data-ko="지원범위" data-ja="対応範囲" data-en="Scope"></a>
-  </div>
-  <div class="langs">
-    <button data-lang="ko" aria-pressed="true">한국어</button>
-    <button data-lang="ja" aria-pressed="false">日本語</button>
-    <button data-lang="en" aria-pressed="false">English</button>
+    <a href="./#how">How</a>
+    <a href="./#render">Renderers</a>
+    <a href="mods.html" aria-current="page">Mods</a>
+    <a href="./#scope">Scope</a>
   </div>
 </div></nav>
 
 <section class="sec">
   <div class="wrap">
-    <span class="kicker rv" data-ko="모드 카탈로그" data-ja="MOD カタログ" data-en="Mod catalogue"></span>
-    <h2 class="rv" data-ko="실제로 설치되는 모드" data-ja="実際に導入できる MOD" data-en="Mods that actually install"></h2>
-    <p class="lead rv"
-       data-ko="앱 안에서 CurseForge · Modrinth 를 검색해 바로 설치합니다. 아래 목록은 동작이 확인된 것과, 원리적으로 안 되는 것을 구분해 정리한 것입니다 (안드로이드·iOS 공통). 다운로드 수는 Modrinth 공개 데이터 기준입니다."
-       data-ja="アプリ内で CurseForge・Modrinth を検索してそのまま導入できます。以下は動作するものと、原理的に動かないものを分けた一覧です（Android・iOS 共通）。ダウンロード数は Modrinth の公開データに基づきます。"
-       data-en="Search CurseForge and Modrinth in-app and install directly. The list below separates what runs — on Android and iOS alike — from what cannot, by design. Download counts come from Modrinth's public data."></p>
+    <span class="kicker rv">Mod catalogue</span>
+    <h2 class="rv">Mods that actually install</h2>
+    <p class="lead rv">Search CurseForge and Modrinth in-app and install directly. The list below separates what runs — on Android and iOS alike — from what cannot, by design. Download counts come from Modrinth's public data.</p>
 
     <div class="filters rv">
-      <button data-cat="all" aria-pressed="true" data-ko="전체" data-ja="すべて" data-en="All"></button>
-      <button data-cat="core"    aria-pressed="false" data-ko="필수" data-ja="必須" data-en="Essential"></button>
-      <button data-cat="perf"    aria-pressed="false" data-ko="성능" data-ja="性能" data-en="Performance"></button>
-      <button data-cat="visual"  aria-pressed="false" data-ko="그래픽" data-ja="グラフィック" data-en="Visual"></button>
-      <button data-cat="shader"  aria-pressed="false" data-ko="셰이더팩" data-ja="シェーダー" data-en="Shaders"></button>
-      <button data-cat="util"    aria-pressed="false" data-ko="편의" data-ja="便利" data-en="Utility"></button>
-      <button data-cat="blocked" aria-pressed="false" data-ko="호환 불가" data-ja="非対応" data-en="Blocked"></button>
+      <button data-cat="all" aria-pressed="true">All</button>
+      <button data-cat="core"    aria-pressed="false">Essential</button>
+      <button data-cat="perf"    aria-pressed="false">Performance</button>
+      <button data-cat="visual"  aria-pressed="false">Visual</button>
+      <button data-cat="shader"  aria-pressed="false">Shaders</button>
+      <button data-cat="util"    aria-pressed="false">Utility</button>
+      <button data-cat="blocked" aria-pressed="false">Blocked</button>
     </div>
 
     <div class="mods">
       <div class="mod rv" id="fabric-api" data-cat="core all">
         <img src="img/mods/fabric-api.png" alt="Fabric API" loading="lazy" width="52" height="52">
         <div>
-          <h3>Fabric API <span class="pill must" data-ko="추천" data-ja="おすすめ" data-en="Pick">추천</span></h3>
-          <p data-ko="거의 모든 Fabric 모드가 전제로 삼는 API. 런처가 의존성을 감지하면 자동으로 설치합니다." data-ja="ほぼ全ての Fabric MOD が前提とする API。ランチャーが依存関係を検出すると自動で導入します。" data-en="The API almost every Fabric mod depends on. The launcher installs it automatically when a dependency is detected."></p>
+          <h3>Fabric API <span class="pill must">Pick</span></h3>
+          <p>The API almost every Fabric mod depends on. The launcher installs it automatically when a dependency is detected.</p>
           <div class="meta"><span>fabric</span><span>243.8M DL</span>
             <span><a href="https://modrinth.com/mod/fabric-api" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -61,8 +53,8 @@
       <div class="mod rv" id="modmenu" data-cat="core all">
         <img src="img/mods/modmenu.png" alt="Mod Menu" loading="lazy" width="52" height="52">
         <div>
-          <h3>Mod Menu <span class="pill must" data-ko="추천" data-ja="おすすめ" data-en="Pick">추천</span></h3>
-          <p data-ko="설치한 모드 목록과 설정 화면으로 들어가는 입구. 터치 환경에서는 사실상 필수입니다." data-ja="導入済み MOD の一覧と設定画面への入口。タッチ環境では事実上必須です。" data-en="Your way into the installed-mod list and their settings screens. Practically required on a touch device."></p>
+          <h3>Mod Menu <span class="pill must">Pick</span></h3>
+          <p>Your way into the installed-mod list and their settings screens. Practically required on a touch device.</p>
           <div class="meta"><span>fabric</span> <span>quilt</span><span>138.2M DL</span>
             <span><a href="https://modrinth.com/mod/modmenu" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -70,8 +62,8 @@
       <div class="mod rv" id="sodium" data-cat="perf all">
         <img src="img/mods/sodium.webp" alt="Sodium" loading="lazy" width="52" height="52">
         <div>
-          <h3>Sodium <span class="pill must" data-ko="추천" data-ja="おすすめ" data-en="Pick">추천</span></h3>
-          <p data-ko="렌더링 엔진 교체. 모바일에서 체감 차이가 가장 큰 모드입니다. FlameLauncher 는 Sodium 을 감지하면 Podium 호환 패치를 함께 넣어줍니다." data-ja="レンダリングエンジンの置き換え。モバイルで最も体感差が大きい MOD です。FlameLauncher は Sodium を検出すると Podium 互換パッチを同梱します。" data-en="A drop-in rendering engine replacement — the single biggest FPS win on mobile. FlameLauncher ships a Podium compatibility patch whenever it detects Sodium."></p>
+          <h3>Sodium <span class="pill must">Pick</span></h3>
+          <p>A drop-in rendering engine replacement — the single biggest FPS win on mobile. FlameLauncher ships a Podium compatibility patch whenever it detects Sodium.</p>
           <div class="meta"><span>fabric</span> <span>neoforge</span> <span>quilt</span><span>216.7M DL</span>
             <span><a href="https://modrinth.com/mod/sodium" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -79,8 +71,8 @@
       <div class="mod rv" id="sodium-extra" data-cat="perf visual all">
         <img src="img/mods/sodium-extra.webp" alt="Sodium Extra" loading="lazy" width="52" height="52">
         <div>
-          <h3>Sodium Extra <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="Sodium 부가 옵션. 구름 · 안개 · 날씨 · 파티클을 개별로 끌 수 있어 모바일 FPS 조정에 직접 쓰입니다." data-ja="Sodium の追加オプション。雲・霧・天候・パーティクルを個別に切れるので、モバイルの FPS 調整に直結します。" data-en="Adds granular Sodium toggles for clouds, fog, weather and particles — the most direct FPS dial you have on mobile."></p>
+          <h3>Sodium Extra <span class="pill good">Works</span></h3>
+          <p>Adds granular Sodium toggles for clouds, fog, weather and particles — the most direct FPS dial you have on mobile.</p>
           <div class="meta"><span>fabric</span> <span>neoforge</span> <span>quilt</span><span>92.5M DL</span>
             <span><a href="https://modrinth.com/mod/sodium-extra" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -88,8 +80,8 @@
       <div class="mod rv" id="lithium" data-cat="perf all">
         <img src="img/mods/lithium.webp" alt="Lithium" loading="lazy" width="52" height="52">
         <div>
-          <h3>Lithium <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="게임 로직 최적화. 렌더링이 아니라 틱 처리를 줄여서, GPU 가 약한 기기에서도 효과가 있습니다." data-ja="ゲームロジックの最適化。描画ではなくティック処理を軽くするため、GPU が弱い端末でも効果があります。" data-en="Optimises game logic rather than rendering, so it helps even on devices whose bottleneck is not the GPU."></p>
+          <h3>Lithium <span class="pill good">Works</span></h3>
+          <p>Optimises game logic rather than rendering, so it helps even on devices whose bottleneck is not the GPU.</p>
           <div class="meta"><span>fabric</span> <span>neoforge</span> <span>quilt</span><span>122.9M DL</span>
             <span><a href="https://modrinth.com/mod/lithium" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -97,8 +89,8 @@
       <div class="mod rv" id="ferrite-core" data-cat="perf all">
         <img src="img/mods/ferrite-core.webp" alt="FerriteCore" loading="lazy" width="52" height="52">
         <div>
-          <h3>FerriteCore <span class="pill must" data-ko="추천" data-ja="おすすめ" data-en="Pick">추천</span></h3>
-          <p data-ko="메모리 사용량 감소. 램이 넉넉하지 않은 폰에서는 사실상 필수입니다." data-ja="メモリ使用量の削減。RAM に余裕のないスマホでは事実上必須です。" data-en="Cuts memory usage — close to mandatory on phones without generous RAM."></p>
+          <h3>FerriteCore <span class="pill must">Pick</span></h3>
+          <p>Cuts memory usage — close to mandatory on phones without generous RAM.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>145.1M DL</span>
             <span><a href="https://modrinth.com/mod/ferrite-core" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -106,8 +98,8 @@
       <div class="mod rv" id="modernfix" data-cat="perf all">
         <img src="img/mods/modernfix.webp" alt="ModernFix" loading="lazy" width="52" height="52">
         <div>
-          <h3>ModernFix <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="로딩 시간 단축과 메모리 절감. 모드팩이 클수록 차이가 커집니다." data-ja="起動時間の短縮とメモリ削減。モドパックが大きいほど差が出ます。" data-en="Shorter load times and lower memory use — the bigger the modpack, the bigger the gain."></p>
+          <h3>ModernFix <span class="pill good">Works</span></h3>
+          <p>Shorter load times and lower memory use — the bigger the modpack, the bigger the gain.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span><span>75.1M DL</span>
             <span><a href="https://modrinth.com/mod/modernfix" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -115,8 +107,8 @@
       <div class="mod rv" id="immediatelyfast" data-cat="perf all">
         <img src="img/mods/immediatelyfast.webp" alt="ImmediatelyFast" loading="lazy" width="52" height="52">
         <div>
-          <h3>ImmediatelyFast <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="즉시 모드 렌더링 가속. UI · 파티클 · 아이템 표시가 많은 화면에서 프레임을 지켜줍니다." data-ja="イミディエイトモード描画の高速化。UI・パーティクル・アイテム表示が多い場面でフレームを守ります。" data-en="Speeds up immediate-mode rendering, which protects your framerate on UI-, particle- and item-heavy screens."></p>
+          <h3>ImmediatelyFast <span class="pill good">Works</span></h3>
+          <p>Speeds up immediate-mode rendering, which protects your framerate on UI-, particle- and item-heavy screens.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>118.6M DL</span>
             <span><a href="https://modrinth.com/mod/immediatelyfast" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -124,8 +116,8 @@
       <div class="mod rv" id="entityculling" data-cat="perf all">
         <img src="img/mods/entityculling.webp" alt="Entity Culling" loading="lazy" width="52" height="52">
         <div>
-          <h3>Entity Culling <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="보이지 않는 엔티티와 블록엔티티를 렌더에서 제외합니다. 몹이 많은 월드에서 효과가 큽니다." data-ja="見えないエンティティ・ブロックエンティティを描画から除外。Mob が多いワールドで効果的です。" data-en="Skips rendering entities and block entities you cannot see — a large win in mob-dense worlds."></p>
+          <h3>Entity Culling <span class="pill good">Works</span></h3>
+          <p>Skips rendering entities and block entities you cannot see — a large win in mob-dense worlds.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>159.3M DL</span>
             <span><a href="https://modrinth.com/mod/entityculling" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -133,8 +125,8 @@
       <div class="mod rv" id="krypton" data-cat="perf all">
         <img src="img/mods/krypton.webp" alt="Krypton" loading="lazy" width="52" height="52">
         <div>
-          <h3>Krypton <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="네트워크 스택 최적화. 멀티플레이 지연과 청크 수신 부하를 줄입니다. 런처의 Krypton 렌더러와는 다른 모드입니다." data-ja="ネットワークスタックの最適化。マルチプレイの遅延とチャンク受信の負荷を減らします。ランチャーの Krypton レンダラーとは別物です。" data-en="Optimises the networking stack, reducing multiplayer latency and chunk-loading overhead. Unrelated to the launcher&#x27;s Krypton renderer."></p>
+          <h3>Krypton <span class="pill good">Works</span></h3>
+          <p>Optimises the networking stack, reducing multiplayer latency and chunk-loading overhead. Unrelated to the launcher's Krypton renderer.</p>
           <div class="meta"><span>fabric</span><span>40.1M DL</span>
             <span><a href="https://modrinth.com/mod/krypton" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -142,8 +134,8 @@
       <div class="mod rv" id="cull-less-leaves" data-cat="perf all">
         <img src="img/mods/cull-less-leaves.png" alt="Cull Less Leaves" loading="lazy" width="52" height="52">
         <div>
-          <h3>Cull Less Leaves <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="나뭇잎 내부 면을 렌더하지 않습니다. 숲 지역 프레임에 도움이 됩니다." data-ja="葉ブロックの内側の面を描画しません。森林バイオームのフレームに効きます。" data-en="Stops rendering the interior faces of leaf blocks — noticeable in forest biomes."></p>
+          <h3>Cull Less Leaves <span class="pill good">Works</span></h3>
+          <p>Stops rendering the interior faces of leaf blocks — noticeable in forest biomes.</p>
           <div class="meta"><span>fabric</span> <span>quilt</span><span>7.3M DL</span>
             <span><a href="https://modrinth.com/mod/cull-less-leaves" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -151,8 +143,8 @@
       <div class="mod rv" id="indium" data-cat="perf all">
         <img src="img/mods/indium.webp" alt="Indium" loading="lazy" width="52" height="52">
         <div>
-          <h3>Indium <span class="pill care" data-ko="주의" data-ja="注意" data-en="Caution">주의</span></h3>
-          <p data-ko="Sodium 과 Fabric Rendering API 를 이어주는 호환 레이어. 이걸 요구하는 모드가 있을 때만 넣으세요." data-ja="Sodium と Fabric Rendering API を繋ぐ互換レイヤー。これを要求する MOD がある場合だけ入れてください。" data-en="A compatibility shim between Sodium and the Fabric Rendering API. Only install it when another mod asks for it."></p>
+          <h3>Indium <span class="pill care">Caution</span></h3>
+          <p>A compatibility shim between Sodium and the Fabric Rendering API. Only install it when another mod asks for it.</p>
           <div class="meta"><span>fabric</span> <span>quilt</span><span>43.4M DL</span>
             <span><a href="https://modrinth.com/mod/indium" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -160,8 +152,8 @@
       <div class="mod rv" id="iris" data-cat="visual all">
         <img src="img/mods/iris.webp" alt="Iris Shaders" loading="lazy" width="52" height="52">
         <div>
-          <h3>Iris Shaders <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="셰이더 로더. Zink 또는 MobileGlues 렌더러와 함께 쓰세요. GL4ES 에서는 대부분의 셰이더가 동작하지 않습니다." data-ja="シェーダーローダー。Zink または MobileGlues レンダラーと併用してください。GL4ES ではほとんどのシェーダーが動きません。" data-en="The shader loader. Pair it with the Zink or MobileGlues renderer — most shaders will not run on GL4ES."></p>
+          <h3>Iris Shaders <span class="pill good">Works</span></h3>
+          <p>The shader loader. Pair it with the Zink or MobileGlues renderer — most shaders will not run on GL4ES.</p>
           <div class="meta"><span>fabric</span> <span>neoforge</span> <span>quilt</span><span>168.8M DL</span>
             <span><a href="https://modrinth.com/mod/iris" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -169,8 +161,8 @@
       <div class="mod rv" id="continuity" data-cat="visual all">
         <img src="img/mods/continuity.png" alt="Continuity" loading="lazy" width="52" height="52">
         <div>
-          <h3>Continuity <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="연결된 텍스처(CTM). 리소스팩이 지원하면 유리·책장 이음매가 사라집니다." data-ja="コネクテッドテクスチャ(CTM)。リソースパックが対応していればガラスや本棚の継ぎ目が消えます。" data-en="Connected textures. If your resource pack supports it, glass and bookshelf seams disappear."></p>
+          <h3>Continuity <span class="pill good">Works</span></h3>
+          <p>Connected textures. If your resource pack supports it, glass and bookshelf seams disappear.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>70.3M DL</span>
             <span><a href="https://modrinth.com/mod/continuity" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -178,8 +170,8 @@
       <div class="mod rv" id="distanthorizons" data-cat="visual all">
         <img src="img/mods/distanthorizons.webp" alt="Distant Horizons" loading="lazy" width="52" height="52">
         <div>
-          <h3>Distant Horizons <span class="pill care" data-ko="주의" data-ja="注意" data-en="Caution">주의</span></h3>
-          <p data-ko="렌더 거리를 크게 늘립니다. 다만 LOD 생성이 무거워 중저가 기기에서는 권장하지 않습니다." data-ja="描画距離を大幅に伸ばします。ただし LOD 生成が重く、ミドル〜ローエンド端末では推奨しません。" data-en="Massively extends render distance, but LOD generation is heavy — not recommended on mid- or low-end devices."></p>
+          <h3>Distant Horizons <span class="pill care">Caution</span></h3>
+          <p>Massively extends render distance, but LOD generation is heavy — not recommended on mid- or low-end devices.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span><span>33.0M DL</span>
             <span><a href="https://modrinth.com/mod/distanthorizons" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -187,8 +179,8 @@
       <div class="mod rv" id="complementary-reimagined" data-cat="shader all">
         <img src="img/mods/complementary-reimagined.webp" alt="Complementary Shaders - Reimagined" loading="lazy" width="52" height="52">
         <div>
-          <h3>Complementary Shaders - Reimagined <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="가장 널리 쓰이는 셰이더팩. 프로필을 낮게 잡으면 모바일에서도 돌아갑니다." data-ja="最も広く使われているシェーダーパック。プロファイルを低く設定すればモバイルでも動きます。" data-en="The most widely used shader pack. Drop the profile to a lower preset and it runs on mobile."></p>
+          <h3>Complementary Shaders - Reimagined <span class="pill good">Works</span></h3>
+          <p>The most widely used shader pack. Drop the profile to a lower preset and it runs on mobile.</p>
           <div class="meta"><span>iris</span> <span>optifine</span><span>63.7M DL</span>
             <span><a href="https://modrinth.com/shader/complementary-reimagined" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -196,8 +188,8 @@
       <div class="mod rv" id="bsl-shaders" data-cat="shader all">
         <img src="img/mods/bsl-shaders.webp" alt="BSL Shaders" loading="lazy" width="52" height="52">
         <div>
-          <h3>BSL Shaders <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="가볍고 무난한 셰이더팩. 모바일 셰이더 입문에 적당합니다." data-ja="軽くて無難なシェーダーパック。モバイルでシェーダーを試す入門に向いています。" data-en="Light and forgiving — a good first shader pack to try on a phone."></p>
+          <h3>BSL Shaders <span class="pill good">Works</span></h3>
+          <p>Light and forgiving — a good first shader pack to try on a phone.</p>
           <div class="meta"><span>iris</span> <span>optifine</span><span>28.0M DL</span>
             <span><a href="https://modrinth.com/shader/bsl-shaders" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -205,8 +197,8 @@
       <div class="mod rv" id="solas-shader" data-cat="shader all">
         <img src="img/mods/solas-shader.webp" alt="Solas Shader" loading="lazy" width="52" height="52">
         <div>
-          <h3>Solas Shader <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="저사양 지향 셰이더팩. 프레임을 지키면서 분위기를 바꾸고 싶을 때." data-ja="低スペック志向のシェーダーパック。フレームを保ちつつ雰囲気を変えたいときに。" data-en="Built for weaker hardware — mood without giving up your framerate."></p>
+          <h3>Solas Shader <span class="pill good">Works</span></h3>
+          <p>Built for weaker hardware — mood without giving up your framerate.</p>
           <div class="meta"><span>iris</span> <span>optifine</span><span>16.2M DL</span>
             <span><a href="https://modrinth.com/shader/solas-shader" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -214,8 +206,8 @@
       <div class="mod rv" id="emi" data-cat="util all">
         <img src="img/mods/emi.webp" alt="EMI" loading="lazy" width="52" height="52">
         <div>
-          <h3>EMI <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="가장 가벼운 레시피 뷰어. 터치 조작과 궁합이 좋습니다." data-ja="最も軽量なレシピビューア。タッチ操作との相性が良いです。" data-en="The lightest recipe viewer of the three, and the friendliest to touch input."></p>
+          <h3>EMI <span class="pill good">Works</span></h3>
+          <p>The lightest recipe viewer of the three, and the friendliest to touch input.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>27.4M DL</span>
             <span><a href="https://modrinth.com/mod/emi" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -223,8 +215,8 @@
       <div class="mod rv" id="jei" data-cat="util all">
         <img src="img/mods/jei.webp" alt="Just Enough Items (JEI)" loading="lazy" width="52" height="52">
         <div>
-          <h3>Just Enough Items (JEI) <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="아이템·레시피 조회. Forge/NeoForge 쪽 표준입니다." data-ja="アイテム・レシピ検索。Forge/NeoForge 側の定番です。" data-en="Item and recipe lookup — the standard choice on Forge and NeoForge."></p>
+          <h3>Just Enough Items (JEI) <span class="pill good">Works</span></h3>
+          <p>Item and recipe lookup — the standard choice on Forge and NeoForge.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span><span>73.4M DL</span>
             <span><a href="https://modrinth.com/mod/jei" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -232,8 +224,8 @@
       <div class="mod rv" id="rei" data-cat="util all">
         <img src="img/mods/rei.webp" alt="Roughly Enough Items (REI)" loading="lazy" width="52" height="52">
         <div>
-          <h3>Roughly Enough Items (REI) <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="JEI 대안. Fabric 모드팩에서 자주 쓰입니다. JEI 와 동시에 넣지 마세요." data-ja="JEI の代替。Fabric モドパックでよく使われます。JEI と同時に入れないでください。" data-en="The JEI alternative common in Fabric packs. Do not install it alongside JEI."></p>
+          <h3>Roughly Enough Items (REI) <span class="pill good">Works</span></h3>
+          <p>The JEI alternative common in Fabric packs. Do not install it alongside JEI.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span><span>25.2M DL</span>
             <span><a href="https://modrinth.com/mod/rei" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -241,8 +233,8 @@
       <div class="mod rv" id="appleskin" data-cat="util all">
         <img src="img/mods/appleskin.png" alt="AppleSkin" loading="lazy" width="52" height="52">
         <div>
-          <h3>AppleSkin <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="허기·포화도 HUD. 작은 화면에서 정보를 더 얻는 데 유용합니다." data-ja="満腹度・隠し満腹度の HUD。小さい画面で情報を増やすのに便利です。" data-en="Hunger and saturation HUD — useful when your screen is small and information is scarce."></p>
+          <h3>AppleSkin <span class="pill good">Works</span></h3>
+          <p>Hunger and saturation HUD — useful when your screen is small and information is scarce.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>85.8M DL</span>
             <span><a href="https://modrinth.com/mod/appleskin" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -250,8 +242,8 @@
       <div class="mod rv" id="xaeros-minimap" data-cat="util all">
         <img src="img/mods/xaeros-minimap.webp" alt="Xaero&#x27;s Minimap" loading="lazy" width="52" height="52">
         <div>
-          <h3>Xaero&#x27;s Minimap <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="미니맵과 웨이포인트. 터치로 길 찾기가 번거로울 때 특히 유용합니다." data-ja="ミニマップとウェイポイント。タッチでの道探しが面倒なときに特に有効です。" data-en="Minimap and waypoints — especially welcome when navigating by touch."></p>
+          <h3>Xaero&#x27;s Minimap <span class="pill good">Works</span></h3>
+          <p>Minimap and waypoints — especially welcome when navigating by touch.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>105.9M DL</span>
             <span><a href="https://modrinth.com/mod/xaeros-minimap" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -259,8 +251,8 @@
       <div class="mod rv" id="journeymap" data-cat="util all">
         <img src="img/mods/journeymap.webp" alt="JourneyMap" loading="lazy" width="52" height="52">
         <div>
-          <h3>JourneyMap <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="전체 지도와 웨이포인트. Xaero 보다 무겁지만 기능이 많습니다." data-ja="フルマップとウェイポイント。Xaero より重いですが機能は豊富です。" data-en="Full-screen mapping and waypoints. Heavier than Xaero&#x27;s, but does more."></p>
+          <h3>JourneyMap <span class="pill good">Works</span></h3>
+          <p>Full-screen mapping and waypoints. Heavier than Xaero's, but does more.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>13.9M DL</span>
             <span><a href="https://modrinth.com/mod/journeymap" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -268,8 +260,8 @@
       <div class="mod rv" id="simple-voice-chat" data-cat="util all">
         <img src="img/mods/simple-voice-chat.png" alt="Simple Voice Chat" loading="lazy" width="52" height="52">
         <div>
-          <h3>Simple Voice Chat <span class="pill must" data-ko="추천" data-ja="おすすめ" data-en="Pick">추천</span></h3>
-          <p data-ko="런처의 마이크 브릿지(자바 오디오 → AAudio)로 실제 음성 입력까지 동작합니다. 서버에도 같은 모드가 필요합니다." data-ja="ランチャーのマイクブリッジ（Java オーディオ → AAudio）により、実際の音声入力まで動作します。サーバー側にも同じ MOD が必要です。" data-en="Works all the way to real microphone input thanks to the launcher&#x27;s Java-audio-to-AAudio bridge. The server needs the same mod."></p>
+          <h3>Simple Voice Chat <span class="pill must">Pick</span></h3>
+          <p>Works all the way to real microphone input thanks to the launcher's Java-audio-to-AAudio bridge. The server needs the same mod.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>65.7M DL</span>
             <span><a href="https://modrinth.com/mod/simple-voice-chat" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -277,8 +269,8 @@
       <div class="mod rv" id="no-chat-reports" data-cat="util all">
         <img src="img/mods/no-chat-reports.png" alt="No Chat Reports" loading="lazy" width="52" height="52">
         <div>
-          <h3>No Chat Reports <span class="pill good" data-ko="동작" data-ja="動作" data-en="Works">동작</span></h3>
-          <p data-ko="채팅 서명·신고 기능 비활성화. 서버가 허용해야 합니다." data-ja="チャット署名・報告機能の無効化。サーバー側の許可が必要です。" data-en="Disables chat signing and reporting. The server has to allow it."></p>
+          <h3>No Chat Reports <span class="pill good">Works</span></h3>
+          <p>Disables chat signing and reporting. The server has to allow it.</p>
           <div class="meta"><span>fabric</span> <span>forge</span> <span>neoforge</span> <span>quilt</span><span>55.4M DL</span>
             <span><a href="https://modrinth.com/mod/no-chat-reports" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -286,8 +278,8 @@
       <div class="mod rv blocked" id="axiom" data-cat="blocked all">
         <img src="img/mods/axiom.png" alt="Axiom" loading="lazy" width="52" height="52">
         <div>
-          <h3>Axiom <span class="pill bad" data-ko="불가" data-ja="不可" data-en="Blocked">불가</span></h3>
-          <p data-ko="데스크톱 전용 네이티브를 번들합니다. 런처가 설치 전에 감지해 자동 비활성화합니다." data-ja="デスクトップ専用ネイティブを同梱しています。ランチャーが導入前に検出して自動で無効化します。" data-en="Bundles desktop-only natives. The launcher detects this before launch and disables it automatically."></p>
+          <h3>Axiom <span class="pill bad">Blocked</span></h3>
+          <p>Bundles desktop-only natives. The launcher detects this before launch and disables it automatically.</p>
           <div class="meta"><span>fabric</span><span>12.3M DL</span>
             <span><a href="https://modrinth.com/mod/axiom" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -295,8 +287,8 @@
       <div class="mod rv blocked" id="flashback" data-cat="blocked all">
         <img src="img/mods/flashback.webp" alt="Flashback" loading="lazy" width="52" height="52">
         <div>
-          <h3>Flashback <span class="pill bad" data-ko="불가" data-ja="不可" data-en="Blocked">불가</span></h3>
-          <p data-ko="네이티브 영상 인코더에 의존합니다. 모바일에서는 원리적으로 실행되지 않습니다." data-ja="ネイティブの映像エンコーダーに依存します。モバイルでは原理的に動作しません。" data-en="Depends on a native video encoder that cannot run on mobile by design."></p>
+          <h3>Flashback <span class="pill bad">Blocked</span></h3>
+          <p>Depends on a native video encoder that cannot run on mobile by design.</p>
           <div class="meta"><span>fabric</span><span>10.5M DL</span>
             <span><a href="https://modrinth.com/mod/flashback" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -304,8 +296,8 @@
       <div class="mod rv blocked" id="controlify" data-cat="blocked all">
         <img src="img/mods/controlify.webp" alt="Controlify (Controller support)" loading="lazy" width="52" height="52">
         <div>
-          <h3>Controlify (Controller support) <span class="pill care" data-ko="주의" data-ja="注意" data-en="Caution">주의</span></h3>
-          <p data-ko="런처가 이미 게임패드를 키보드·마우스로 변환합니다. 중복이며, 데스크톱 컨트롤러 네이티브를 물고 있는 빌드는 자동 비활성화됩니다." data-ja="ランチャーが既にゲームパッドをキーボード・マウスへ変換します。重複であり、デスクトップ用コントローラーネイティブを含むビルドは自動で無効化されます。" data-en="The launcher already translates gamepads into keyboard and mouse. It is redundant here, and builds carrying desktop controller natives get auto-disabled."></p>
+          <h3>Controlify (Controller support) <span class="pill care">Caution</span></h3>
+          <p>The launcher already translates gamepads into keyboard and mouse. It is redundant here, and builds carrying desktop controller natives get auto-disabled.</p>
           <div class="meta"><span>fabric</span> <span>neoforge</span><span>22.2M DL</span>
             <span><a href="https://modrinth.com/mod/controlify" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
@@ -313,61 +305,43 @@
       <div class="mod rv blocked" id="replaymod" data-cat="blocked all">
         <img src="img/mods/replaymod.png" alt="ReplayMod" loading="lazy" width="52" height="52">
         <div>
-          <h3>ReplayMod <span class="pill care" data-ko="주의" data-ja="注意" data-en="Caution">주의</span></h3>
-          <p data-ko="녹화·렌더링이 매우 무겁습니다. 실행되더라도 모바일에서 실용적이지 않습니다." data-ja="録画・レンダリングが非常に重く、動いたとしてもモバイルでは実用的ではありません。" data-en="Recording and rendering are extremely heavy — even when it loads, it is not practical on a phone."></p>
+          <h3>ReplayMod <span class="pill care">Caution</span></h3>
+          <p>Recording and rendering are extremely heavy — even when it loads, it is not practical on a phone.</p>
           <div class="meta"><span>fabric</span> <span>forge</span><span>18.1M DL</span>
             <span><a href="https://modrinth.com/mod/replaymod" target="_blank" rel="noopener">Modrinth ↗</a></span></div>
         </div>
       </div>    </div>
 
-    <div class="warn rv" style="margin-top:28px"
-      data-ko="런처는 설치 전에 jar 안 .so 파일의 ELF 헤더를 읽어 데스크톱 전용 네이티브를 판별합니다. 걸린 모드는 삭제하지 않고 .jar.pingdisabled 로 이름만 바꾸므로, 모드팩 무결성은 그대로 유지됩니다."
-      data-ja="ランチャーは導入前に jar 内の .so の ELF ヘッダーを読み、デスクトップ専用ネイティブを判別します。該当 MOD は削除せず .jar.pingdisabled にリネームするだけなので、モドパックの整合性は保たれます。"
-      data-en="Before launch the launcher reads the ELF header of every .so inside a jar to spot desktop-only natives. Offending mods are renamed to .jar.pingdisabled rather than deleted, so modpack integrity is preserved."></div>
+    <div class="warn rv" style="margin-top:28px">Before launch the launcher reads the ELF header of every .so inside a jar to spot desktop-only natives. Offending mods are renamed to .jar.pingdisabled rather than deleted, so modpack integrity is preserved.</div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <span class="kicker rv" data-ko="설치 방법" data-ja="導入方法" data-en="How to install"></span>
-    <h2 class="rv" data-ko="네 단계면 끝납니다" data-ja="4 ステップで完了" data-en="Four steps"></h2>
+    <span class="kicker rv">How to install</span>
+    <h2 class="rv">Four steps</h2>
     <ol class="flow" style="margin-top:26px">
-      <li class="rv left" data-ko="인스턴스를 만들 때 로더를 Fabric 또는 NeoForge 로 고릅니다. 위 목록 대부분이 Fabric 기준입니다."
-          data-ja="インスタンス作成時にローダーを Fabric または NeoForge にします。上記のほとんどは Fabric 前提です。"
-          data-en="Pick Fabric or NeoForge as the loader when creating the instance — most of the list above assumes Fabric."></li>
-      <li class="rv left" data-ko="인스턴스 화면의 콘텐츠 탭에서 모드를 검색합니다. Fabric API 같은 의존성은 자동으로 함께 설치됩니다."
-          data-ja="インスタンス画面のコンテンツタブで MOD を検索します。Fabric API などの依存関係は自動で一緒に導入されます。"
-          data-en="Search for the mod in the instance's content tab. Dependencies such as Fabric API are pulled in automatically."></li>
-      <li class="rv left" data-ko="셰이더를 쓴다면 렌더러를 Zink 또는 MobileGlues 로 바꾸고, Iris 와 셰이더팩을 함께 넣습니다."
-          data-ja="シェーダーを使うならレンダラーを Zink または MobileGlues に変更し、Iris とシェーダーパックを一緒に導入します。"
-          data-en="For shaders, switch the renderer to Zink or MobileGlues and install Iris together with a shader pack."></li>
-      <li class="rv left" data-ko="크래시가 나면 크래시 복구 센터가 원인으로 의심되는 모드를 짚어줍니다. 토글로 끄고 다시 실행하세요."
-          data-ja="クラッシュした場合はクラッシュ復旧センターが原因と疑われる MOD を指摘します。トグルで無効化して再起動してください。"
-          data-en="If it crashes, the crash recovery centre points at the suspected mod — toggle it off and relaunch."></li>
+      <li class="rv left">Pick Fabric or NeoForge as the loader when creating the instance — most of the list above assumes Fabric.</li>
+      <li class="rv left">Search for the mod in the instance's content tab. Dependencies such as Fabric API are pulled in automatically.</li>
+      <li class="rv left">For shaders, switch the renderer to Zink or MobileGlues and install Iris together with a shader pack.</li>
+      <li class="rv left">If it crashes, the crash recovery centre points at the suspected mod — toggle it off and relaunch.</li>
     </ol>
   </div>
 </section>
 
 <section class="sec" style="text-align:center">
   <div class="wrap">
-    <h2 class="rv" data-ko="런처부터 받으세요" data-ja="まずランチャーを" data-en="Start with the launcher"></h2>
-    <p class="lead rv" style="margin:14px auto 28px"
-       data-ko="Android 8.0 이상 · iOS 17.0 이상 · arm64 기기에서 동작합니다."
-       data-ja="Android 8.0 以上・iOS 17.0 以上・arm64 端末で動作します。"
-       data-en="Runs on Android 8.0+ and iOS 17.0+, arm64 devices."></p>
+    <h2 class="rv">Start with the launcher</h2>
+    <p class="lead rv" style="margin:14px auto 28px">Runs on Android 8.0+ and iOS 17.0+, arm64 devices.</p>
     <div class="cta rv">
-      <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-Android/releases"
-         data-ko="APK 다운로드" data-ja="APK をダウンロード" data-en="Download the APK"></a>
-      <a class="btn ghost" href="./"
-         data-ko="← 소개 페이지로" data-ja="← 紹介ページへ" data-en="← Back to the overview"></a>
+      <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-Android/releases">Download the APK</a>
+      <a class="btn ghost" href="./">← Back to the overview</a>
     </div>
   </div>
 </section>
 
 <footer><div class="wrap">
-  <div data-ko="모드 이름 · 아이콘 · 다운로드 수는 각 제작자와 Modrinth 의 것입니다. 이 페이지는 호환성 안내 목적입니다."
-       data-ja="MOD 名・アイコン・ダウンロード数は各制作者と Modrinth に帰属します。本ページは互換性の案内を目的としています。"
-       data-en="Mod names, icons and download counts belong to their authors and Modrinth. This page exists to document compatibility."></div>
+  <div>Mod names, icons and download counts belong to their authors and Modrinth. This page exists to document compatibility.</div>
   <div><a href="https://github.com/FlameLaunchers/FlameLauncher-Android">Android</a> · <a href="https://github.com/FlameLaunchers/FlameLauncher-iOS">iOS</a> · <a href="./">Home</a></div>
 </div></footer>
 

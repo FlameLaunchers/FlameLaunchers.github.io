@@ -1,29 +1,25 @@
-# FlameLauncher — 소개 사이트
+# FlameLauncher — website
 
-<https://flamelaunchers.github.io/>
-
-안드로이드·iOS 런처 소개 페이지입니다. 정적 HTML 이고 빌드 단계가 없습니다.
+The landing page for the Android and iOS launchers. Plain static HTML, no build step.
 
 ```
-index.html   소개 (한국어 · 日本語 · English)
-mods.html    동작하는 모드 목록
-style.css
-app.js       언어 전환 · 스크롤 연출
-img/mods/    모드 아이콘
+index.html   overview
+mods.html    mods that work
+style.css    shared styles
+app.js       scroll effects and the mods filter
+img/mods/    mod icons
 ```
 
-언어는 `data-ko` / `data-ja` / `data-en` 속성으로 붙어 있고 `app.js` 가 바꿔 끼웁니다.
-문구를 고칠 때는 **세 언어를 같이** 고쳐야 합니다 — 하나만 바꾸면 그 언어에서만 어긋납니다.
+Published at https://flamelaunchers.github.io/ through GitHub Pages from `main`.
 
-## 저장소
+## Repositories
 
 - [FlameLauncher-Android](https://github.com/FlameLaunchers/FlameLauncher-Android)
 - [FlameLauncher-iOS](https://github.com/FlameLaunchers/FlameLauncher-iOS)
 - [FlameLauncher-Natives](https://github.com/FlameLaunchers/FlameLauncher-Natives)
 
-## 라이선스
+## License
 
-문서와 페이지는 각 런처와 같은 **AGPL-3.0** 입니다.
+The documents and pages are **AGPL-3.0**, the same as the launchers.
 
-> Minecraft 는 Mojang AB 의 상표입니다. 이 프로젝트는 Mojang AB · Microsoft 와
-> 아무 관련이 없습니다.
+> Minecraft is a trademark of Mojang AB. This project is not affiliated with Mojang AB or Microsoft.

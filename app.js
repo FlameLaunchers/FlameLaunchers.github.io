@@ -1,16 +1,4 @@
-/* FlameLauncher — i18n + presentation behaviour */
-
-/* ── language ─────────────────────────────── */
-const setLang = l => {
-  document.documentElement.lang = l;
-  document.querySelectorAll('[data-ko]').forEach(e => e.textContent = e.dataset[l]);
-  document.querySelectorAll('.langs button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
-  try { localStorage.setItem('flamelang', l); } catch {}
-};
-document.querySelectorAll('.langs button').forEach(b => b.onclick = () => setLang(b.dataset.lang));
-let saved; try { saved = localStorage.getItem('flamelang'); } catch {}
-setLang(saved || (navigator.language.startsWith('ko') ? 'ko'
-               : navigator.language.startsWith('ja') ? 'ja' : 'en'));
+/* FlameLauncher — presentation behaviour */
 
 /* ── reveal on scroll, staggered per container ── */
 const io = new IntersectionObserver(es => es.forEach(e => {
