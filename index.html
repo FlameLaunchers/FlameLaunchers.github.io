@@ -22,7 +22,6 @@
     <a href="#how">How</a>
     <a href="#render">Renderers</a>
     <a href="mods.html">Mods</a>
-    <a href="#scope">Scope</a>
   </div>
 </div></nav>
 
@@ -223,40 +222,6 @@
         <tr><td>Start</td><td>ESC</td><td>Select</td><td>Tab</td></tr>
       </tbody>
     </table></div>
-  </div>
-</section>
-
-<!-- 8 ─ scope -->
-<section class="slide" id="scope">
-  <div class="wrap">
-    <span class="kicker rv">Scope</span>
-    <h2 class="rv">What works, what doesn't</h2>
-    <p class="lead rv">Stated honestly — including what does not work.</p>
-    <div class="grid g2">
-      <div class="card rv">
-        <h3>✅ Works</h3>
-        <ul class="list yes">
-          <li>Vanilla, Fabric, Forge, NeoForge (Quilt via modpacks)</li>
-          <li>The full Microsoft sign-in flow</li>
-          <li>Java 8 / 17 / 21 / 25, selected and extracted automatically</li>
-          <li>Shader packs and custom Vulkan driver import</li>
-          <li>Simple Voice Chat and friends, via the microphone bridge</li>
-          <li>Terracotta P2P multiplayer — direct, with no relay server</li>
-          <li>The latest stable release, 26.3, on Android and iOS</li>
-        </ul>
-      </div>
-      <div class="card rv">
-        <h3>⛔ Does not work</h3>
-        <ul class="list no">
-          <li>Android: 26.3's Vulkan backend is untested — on GPUs without Vulkan 1.2 (e.g. Mali-G57) the game falls back to OpenGL on its own.</li>
-          <li>Shader packs that use noperspective (Complementary and its forks) on Mali GPUs — GLES has no such qualifier there, so Iris switches shaders off and the game carries on.</li>
-          <li>Mods bundling desktop-only natives — auto-disabled by renaming, not deleting, so modpack integrity survives</li>
-          <li>32-bit devices — arm64 only</li>
-          <li>iOS: re-attaching JIT on every version switch — a JVM starts once per process, and JIT is a property of the process. There is no way around it.</li>
-          <li>Joining an Online LAN room on iOS — the entitlement for a virtual network device cannot be signed with a free account, so the address goes in by hand. Hosting works normally.</li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>
 
