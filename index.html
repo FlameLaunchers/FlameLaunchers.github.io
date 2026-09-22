@@ -39,7 +39,7 @@
       <span class="badge">iOS 17.0+</span>
       <span class="badge">arm64</span>
       <span class="badge">Fabric · Forge · NeoForge · Quilt</span>
-      <span class="badge">iOS ~ MC 26.3 · Android ~ 26.2</span>
+      <span class="badge">Up to MC 26.3</span>
     </div>
     <div class="cta rv">
       <a class="btn primary" href="https://github.com/FlameLaunchers/FlameLauncher-Android/releases/latest/download/FlameLauncher.apk">Android — APK</a>
@@ -54,7 +54,7 @@
   <div class="wrap">
     <span class="kicker rv">Platforms</span>
     <h2 class="rv">Same game, different hurdle</h2>
-    <p class="lead rv">Both apps follow the same rules — same folder layout, same JVM arguments, same GLFW mapping. What differs is what the OS permits.</p>
+    <p class="lead rv">Both apps follow the same rules — same folder layout, same JVM arguments, same input mapping. What differs is what the OS permits.</p>
     <div class="grid g2">
       <div class="card rv">
         <h3>🤖 Android</h3>
@@ -63,6 +63,7 @@
           <li>No JIT setup needed</li>
           <li>Four renderers plus custom Vulkan drivers</li>
           <li>Mouse pointer capture</li>
+          <li>MC 26.3 — SDL3 windowing and input, rendered through the built-in MobileGlues</li>
           <li>Android 8.0+ · arm64-v8a</li>
         </ul>
       </div>
@@ -98,7 +99,7 @@
         <p>Translates desktop OpenGL through Zink, GL4ES, Krypton or MobileGlues onto the mobile GPU — falling back automatically when a path fails.</p></div>
       <div class="card rv"><span class="num">03</span><span class="ico">🕹️</span>
         <h3>I/O bridge</h3>
-        <p>Wires the GLFW windowing and input API to Android Surface, touch and key events — keyboard, mouse and gamepad ride the same path.</p></div>
+        <p>Wires the game's windowing and input — GLFW, or SDL3 from 26.3 on — to the platform's surface, touch and key events. Keyboard, mouse and gamepad ride the same path.</p></div>
     </div>
     <div class="warn rv">Reuses PojavLauncher's proven native bridges and adapts parts of ZalithLauncher 2's launch orchestration, then adds a Compose UI, content integration and crash recovery.</div>
   </div>
@@ -128,7 +129,7 @@
   <div class="wrap">
     <span class="kicker rv">Graphics</span>
     <h2 class="rv">Four renderers</h2>
-    <p class="lead rv">On Android, a failing Zink path falls back natively: Freedreno → Panfrost → GL4ES. On iOS, MobileGlues is the default — and the only one shaders run on.</p>
+    <p class="lead rv">On Android, a failing Zink path falls back natively: Freedreno → Panfrost → GL4ES. On iOS, MobileGlues is the default — and the only one shaders run on. MC 26.3 always runs on MobileGlues on Android: it is the only layer that also exposes EGL, which SDL3 needs.</p>
     <div class="scroll rv"><table class="tbl">
       <thead><tr>
         <th>Renderer</th>
@@ -199,7 +200,7 @@
         <p>A drag-and-drop editable virtual keypad that scales for phones and tablets, with a combat/normal toggle that reassigns attack and use between tap and long-press.</p></div>
       <div class="card rv"><span class="ico">⌨️</span>
         <h3>Keyboard &amp; mouse</h3>
-        <p>Full GLFW key mapping with distinct left/right modifiers and IME composition. Pointer Capture gives unbounded look-around; menus switch to an absolute cursor automatically.</p></div>
+        <p>Full key mapping with distinct left/right modifiers and IME composition. Pointer Capture gives unbounded look-around; menus switch to an absolute cursor automatically.</p></div>
     </div>
     <div class="scroll rv" style="margin-top:16px"><table class="tbl">
       <thead><tr>
@@ -241,14 +242,14 @@
           <li>Shader packs and custom Vulkan driver import</li>
           <li>Simple Voice Chat and friends, via the microphone bridge</li>
           <li>Terracotta P2P multiplayer — direct, with no relay server</li>
-          <li>The latest stable release, 26.3 (iOS) — Android up to 26.2</li>
+          <li>The latest stable release, 26.3, on Android and iOS</li>
         </ul>
       </div>
       <div class="card rv">
         <h3>⛔ Does not work</h3>
         <ul class="list no">
-          <li>MC 26.3 on Android — the game moved from GLFW to SDL3. iOS is done; Android is in progress.</li>
-          <li>Android: the game's Vulkan backend — there is no VkSurfaceKHR creation path. Run with OpenGL.</li>
+          <li>Android: 26.3's Vulkan backend is untested — on GPUs without Vulkan 1.2 (e.g. Mali-G57) the game falls back to OpenGL on its own.</li>
+          <li>Shader packs that use noperspective (Complementary and its forks) on Mali GPUs — GLES has no such qualifier there, so Iris switches shaders off and the game carries on.</li>
           <li>Mods bundling desktop-only natives — auto-disabled by renaming, not deleting, so modpack integrity survives</li>
           <li>32-bit devices — arm64 only</li>
           <li>iOS: re-attaching JIT on every version switch — a JVM starts once per process, and JIT is a property of the process. There is no way around it.</li>
@@ -278,7 +279,7 @@
 </section>
 
 <footer><div class="wrap">
-  <div>AGPL-3.0 · Terracotta AGPL-3.0 · PojavLauncher and Amethyst-iOS GPL-3.0 · MobileGlues LGPL-2.1 · libadrenotools BSD-2-Clause</div>
+  <div>AGPL-3.0 · Terracotta AGPL-3.0 · PojavLauncher and Amethyst-iOS GPL-3.0 · MobileGlues LGPL-2.1 · SDL zlib · LWJGL BSD-3-Clause · shaderc Apache-2.0 · libadrenotools BSD-2-Clause</div>
   <div>Minecraft is a trademark of Mojang AB. This project is not affiliated with Mojang AB or Microsoft.</div>
   <div><a href="https://github.com/FlameLaunchers/FlameLauncher-Android">Android</a> · <a href="https://github.com/FlameLaunchers/FlameLauncher-iOS">iOS</a> · <a href="https://github.com/FlameLaunchers/FlameLauncher-Natives">Natives</a> · <a href="mods.html">Mods</a></div>
 </div></footer>
