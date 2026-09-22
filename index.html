@@ -20,7 +20,6 @@
   <div class="navlinks">
     <a href="#plat">Platforms</a>
     <a href="#how">How</a>
-    <a href="#render">Renderers</a>
     <a href="mods.html">Mods</a>
   </div>
 </div></nav>
@@ -123,34 +122,6 @@
   </div>
 </section>
 
-<!-- 4 ─ renderers -->
-<section class="slide" id="render">
-  <div class="wrap">
-    <span class="kicker rv">Graphics</span>
-    <h2 class="rv">Four renderers</h2>
-    <p class="lead rv">On Android, a failing Zink path falls back natively: Freedreno → Panfrost → GL4ES. On iOS, MobileGlues is the default — and the only one shaders run on. MC 26.3 always runs on MobileGlues on Android: it is the only layer that also exposes EGL, which SDL3 needs.</p>
-    <div class="scroll rv"><table class="tbl">
-      <thead><tr>
-        <th>Renderer</th>
-        <th>How</th>
-        <th>Best for</th>
-        <th>Platform</th>
-      </tr></thead>
-      <tbody>
-        <tr><td><b>Zink</b> 🌋</td><td>Vulkan → OpenGL</td>
-          <td>Modern GPUs, 1.17+</td><td>Android</td></tr>
-        <tr><td><b>GL4ES</b> 🕹️</td><td>OpenGL → GLES 2.0</td>
-          <td>Older versions (≤1.12), devices without Zink</td><td>Android · iOS</td></tr>
-        <tr><td><b>Krypton</b> ⚛️</td><td>OpenGL → GLES 3.x</td>
-          <td>Shaders plus broad coverage; bundled</td><td>Android</td></tr>
-        <tr><td><b>MobileGlues</b> 🚀</td><td>OpenGL 4.x → GLES 3.2</td>
-          <td>Best shader performance; built into both apps</td><td>Android · <b>iOS default</b></td></tr>
-      </tbody>
-    </table></div>
-    <div class="warn rv">Custom Vulkan drivers (Turnip and friends) are not distributed by this project. Get them from a trusted source — official Mesa, K11MCH1/AdrenoToolsDrivers — and import the zip yourself.</div>
-  </div>
-</section>
-
 <!-- 5 ─ mods teaser -->
 <section class="slide" id="mods">
   <div class="wrap">
@@ -164,26 +135,6 @@
     <div class="cta" style="justify-content:flex-start">
       <a class="btn primary rv" href="mods.html">Browse the full list →</a>
     </div>
-  </div>
-</section>
-
-<!-- 6 ─ flow -->
-<section class="slide" id="flow">
-  <div class="wrap">
-    <span class="kicker rv">Under the hood</span>
-    <h2 class="rv">Nine steps to start one game</h2>
-    <ol class="flow">
-      <li class="rv left">Pick a version — fetch Mojang's version_manifest.json</li>
-      <li class="rv left">Pick a loader — query the Fabric / Forge / NeoForge meta APIs</li>
-      <li class="rv left">Download — client jar, libraries and assets</li>
-      <li class="rv left">Install the loader — merge libraries, flatten into InstanceMeta</li>
-      <li class="rv left">Extract the JRE — Java 8 / 17 / 21 / 25 to match the MC version</li>
-      <li class="rv left">(First Forge run) a separate process patches the client jar, then exits</li>
-      <li class="rv left">Load the renderer — load the selected .so and set environment variables</li>
-      <li class="rv left">Boot the JVM — flamejvm.cpp::bootMinecraftJVM → JNI_CreateJavaVM</li>
-      <li class="rv left">Start the game — mainClass.main(args)</li>
-    </ol>
-    <div class="warn rv">Why step 6 is its own process: JNI_CreateJavaVM can only be called once per process. Running Forge processors inside the game JVM freezes the classpath before the patched jar exists.</div>
   </div>
 </section>
 
