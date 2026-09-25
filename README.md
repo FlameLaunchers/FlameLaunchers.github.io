@@ -14,7 +14,7 @@ Published at https://flamelaunchers.github.io/ through GitHub Pages from `main`.
 
 ## Repositories
 
-- [FlameLauncher (Android)](https://github.com/FlameLaunchers/FlameLauncher)
+- [FlameLauncher-Android](https://github.com/FlameLaunchers/FlameLauncher-Android)
 - [FlameLauncher-iOS](https://github.com/FlameLaunchers/FlameLauncher-iOS)
 - [FlameLauncher-Natives](https://github.com/FlameLaunchers/FlameLauncher-Natives)
 
